@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   </head>
+<body>
+   <section id="header">
+    <div class="left">
+        <a href=""><img src="./prolaborate (1).png" width="200px;" height="100px;"></a> 
+    </div>
+   </section>
+   <section id="main content">
+      <div class="form-container">
+         <div class="welcome-message">
+            <h1>Welcome back!</h1>
+          </div>
+      
+        <form  id="form" class="login_form"  method="post" name="form">
+           
+              <div class="pw-meter">
+               <div class="form-element">
+                  <h1 class="label">Login</h1>
+                  <div class="font">Email</div>
+              <div class="inputbox">
+                  <input  id="email" autocomplete="off" type="text" name="email" placeholder="enter your email" onkeydown="email_validation()";>
+               <span id="text"></span>
+              </div>
+              <div class="font">Password</div>
+                 <input type="password" id="password" placeholder="enter your password">
+                 <div class="pw-display-toggle-btn">
+                  
+                </div>
+                 <div class="pw-strength">
+                   <span>Weak</span>
+                   <span></span>
+                 </div>
+               </div>
+               <div class="submit">
+                  <button id="submit" type="submit" onclick="welcomepage()">Login</button>
+              </div>
+             </div>
+            
+
+              
+     </div>	
+     </section>
+   <footer>
+   
+
+    <p>@2023 Dream clothings website.All rights reserved.               Dreamclothings@gmail.com
+    Explore our partner companys
+       <a href="https://tmangharam.com/">Tmangharam</a>
+    </p>
+
+    
+   </footer>
+   <script src="./script.js"></script>
+   <script>
+    $("#submit").click(function() {
+    $("#signin").slideUp(function() {
+      $(".form-container").hide();
+      $(".welcome-message").slideDown(function() {
+        $(".welcome-message").fadeTo(400, 1);
+      });
+    });
+  });
+
+   </script>
+</body>
+</html>
