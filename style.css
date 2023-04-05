@@ -1,209 +1,189 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  body{
-    background: url(./background7jpg.avif);
-    background-position: center;
-	background-size: cover;
-    background-repeat: no-repeat;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: url(./background7jpg.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #header{
-    padding-top: 15px;
-    display: flex;
+  padding-top: 15px;
+  display: flex;
 }  
 .left{
-   padding-left: 30px;
+ padding-left: 30px;
+}
+form{
+  position: relative;
+  width:300px;
+  margin-left: 40%;
 }
 .form-container{
-    float:right;
-	position: relative;
-	border-radius: 4px;
-    margin-right:10%;
-	margin-top: 10%;
-	width: 350px;
-	height:auto;
-    margin-left: 20%;
-	border-radius: 5px;
+border-radius: 5px;
+  width:300px;
+  height:330px;
+  background:url(./background8.png);
+  padding:10px 10px 10px 10px;
+  border: 1px solid rgb(245, 241, 241);
+  box-shadow: 2px 0 2px 0 rgb(163, 161, 161);
 }
-#form #inputbox{
-    position:relative;
-	text-align: center;
-	justify-content: center;
+h3{
+  font-size: 25px;
+  color:#01080d;
+  font-weight: bolder;
+  text-align: center;
 }
-#text{
-    display: block;
-    color: #000;
-    font-weight: 300;
-    font-style: italic;
-    padding: 5px;
+form label{
+ position: relative; 
+ display: block;
 }
-#form.invalid.inputbox:before{
-    content: '';
-    position:absolute;
-    right:12px;
-    top:12px;
-    width:24px;
-    height:24px;
-    background: url(./invalid.png);
-    background-size: cover;
-    z-index:1000;
-}
-#form.valid.inputbox:after{
-    content: '';
-    position:absolute;
-    right:12px;
-    top:12px;
-    width:24px;
-    height:24px;
-    background: url(./valid.png);
-    background-size: cover;
-    z-index:1000;
-}
-
-.pw-meter {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:270px;
-  border-radius: 5px;
-  background:url(./background3.jpg);
-  padding:20px;
-  box-shadow:10px 0px 20px 5px rgba(38, 181, 10, 0.05);
-}
-.pw-meter h2 {
-  margin:10px 0px 30px;
-  font-size:20px;
-  color:#111;
-  text-align:center;
-}
-.pw-meter .form-element {
-  position:relative;
-}
-.pw-meter label {
-  display:block;
-  margin-bottom:8px;
-  color:#111;
-}
-.pw-meter input {
-  padding:8px 30px 8px 10px;
+form input{
+  margin:15px 0;
   width:100%;
-  font-size:16px;
-  border:1px solid #bbb;
-  outline:none;
+  background:#b9b5b5;
+  color:#fff;
+  padding:10px;
+  border-radius: 6px;
+  font-size: 18px;
+  border: none;
+  outline: none;
 }
-.pw-meter .pw-display-toggle-btn {
-  position:absolute;
-  right:10px;
-  top:35px;
-  width:20px;
-  height:20px;
-  text-align:center;
-  line-height:20px;
+form input:hover{
   cursor:pointer;
+  background-color:#b6e2f7 ;
 }
-.pw-meter .pw-display-toggle-btn i.fa-eye-slash {
-  display:none;
+.emailtext,
+.passtext{
+  font-weight: 300;
+  font-style:italic;
+  padding:5px;
+  
 }
-.pw-meter .pw-display-toggle-btn.active i.fa-eye-slash {
-  display:block;
+label.valid.emailtext,
+label.valid.passtext{
+  color:#0d8d0d;
 }
-.pw-meter .pw-display-toggle-btn.active i.fa-eye {
-  display:none;
+label.invalid.emailtext,
+label.invalid.passtext{
+  color:#f00;
 }
-.pw-meter .pw-strength {
-  position:relative;
-  width:93%;
-  padding-top:10px;
-  height:25px;
-  margin-top:10px;
-  text-align:center;
-  background:#f2f2f2;
-  display:none;
+label.valid::before,
+label.invalid::before{
+  content:"";
+  position: absolute;
+  width:24px;
+  height:24px;
+  top:18px;
+  right:5px;
+  z-index:100;
 }
-.pw-meter .pw-strength span:nth-child(1) {
-  position:relative;
-  font-size:13px;
-  color:#111;
-  z-index:2;
-  font-weight:600;
+label.valid::before{
+  background: url(./check.jpeg)no-repeat center /cover;
 }
-.pw-meter .pw-strength span:nth-child(2) {
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:0%;
-  height:100%;
+label.invalid::before{
+  background: url(./error.jpeg)no-repeat center /cover;
+}
+.container{
+  width:100%;
+  height:5%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.btn{
+  margin-top: 45px;
+  padding: 10px 108px;
+  background: #b9b5b5;
+  border:0;
+  outline: none;
+  cursor:pointer;
+  font-size: 15px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight:bolder;
   border-radius:5px;
-  z-index:1;
-  transition:all 300ms ease-in-out;
+
 }
-.label{
-	padding: 20px 90px;
-	font-size: 25px;
-	font-weight: bold;
+.btn:hover{
+  cursor: pointer;
+  background-color: #b6e2f7;
 }
-.login_form{
-	padding: 20px 40px;
+.popup{
+  width:400px;
+  background: #fff;
+  border-radius: 6px;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform: translate(-50%,-50%)scale(0.1);
+  text-align: center;
+  padding:0 30px 30px;
+  color:#333;
+  visibility: hidden;
+  transition: transform 0.4s,top 0.4s;
 }
-.login_form .font{
-	font-size: 18px;
-	color: #efeff0;
-	margin: 5px 0;
+.open-popup{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%)scale(1);
 }
-.login_form input{
-	height: 30px;
-	width: 250px;
-	padding: 0 5px;
-	font-size: 18px;
-	outline: none;
-	border: 1px solid rgb(125, 73, 73);
+.popup img{
+  width:100px;
+  margin-top:-50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
-.login_form .font{
-	margin-top: 30px;
+.popup h2{
+  font-size: 38px;
+  font-weight: 500;
+  margin:30px 0 10px;
 }
-.login_form button{
-	margin: 20px 0 10px 0;
-	height: 30px;
-	width: 250px;
-	font-size: 15px;
-	color: white;
-	outline: none;
-	cursor: pointer;
-	font-weight: bold;
-	background: #3da6c3;
-	border-radius: 3px;
-	border: 1px solid #3da6c3;
-	transition: .5s;
+.popup button{
+  width:100%;
+  margin-top: 50px;
+  padding:10px 0;
+  background: #6fd649;
+  color:#fff;
+  border:0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
 }
-.login_form button:hover{
-	background: #151c6a;
+.footer{
+  position: fixed;
+  Width: 100%;
+  bottom: 0;
+  height: 13%;
+   
 }
-.login_form #email_error,
-.login_form #pass_error{
-	margin-top: 5px;
-	width: 345px;
-	font-size: 18px;
-	color: #C62828;
-	background: rgba(255,0,0,0.1);
-	text-align: center;
-	padding: 5px 8px;
-	border-radius: 3px;
-	border: 1px solid #EF9A9A;
-	display: none;
-}
-footer{
-    width: 100%;
-    height:10%;
-    margin-top: 29%;
- 
-}
-p{
-    padding-top:20px;
-    padding-left: 15%;
-    font-size: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color:red;
+#copy{ 
+   padding:30px;
+   padding-left: 75px;
+   color: white;
+   font-size: 14px;
+   display: flex;       
 }
 
+#company_name{
+   padding-left: 50px;
+   color: white;
+   font-size: 14px;
+    
+}
+#company_name1{
+   padding-left: 45px;
+   padding-right: 15px;
+   color: white;
+   font-size: 14px;
+       
+}
+.partners{
+   padding-right: 15px;
+   color: yellowgreen;
+   font-size: 14px;
+    font-weight: bold; 
+   text-decoration: none; 
+}

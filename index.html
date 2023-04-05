@@ -5,71 +5,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-   </head>
+</head>
 <body>
    <section id="header">
-    <div class="left">
-        <a href=""><img src="./prolaborate (1).png" width="200px;" height="100px;"></a> 
-    </div>
-   </section>
-   <section id="main content">
-      <div class="form-container">
-         <div class="welcome-message">
-            <h1>Welcome back!</h1>
-          </div>
-      
-        <form  id="form" class="login_form"  method="post" name="form">
-           
-              <div class="pw-meter">
-               <div class="form-element">
-                  <h1 class="label">Login</h1>
-                  <div class="font">Email</div>
-              <div class="inputbox">
-                  <input  id="email" autocomplete="off" type="text" name="email" placeholder="enter your email" onkeydown="email_validation()";>
-               <span id="text"></span>
-              </div>
-              <div class="font">Password</div>
-                 <input type="password" id="password" placeholder="enter your password">
-                 <div class="pw-display-toggle-btn">
-                  
-                </div>
-                 <div class="pw-strength">
-                   <span>Weak</span>
-                   <span></span>
-                 </div>
-               </div>
-               <div class="submit">
-                  <button id="submit" type="submit" onclick="welcomepage()">Login</button>
-              </div>
-             </div>
-            
-
-              
-     </div>	
-     </section>
-   <footer>
+      <div class="left">
+          <a href=""><img src="./prolaborate (1).png" width="250px;" height="100px;"></a> 
+      </div>
+      </section>
+  
+  <form action="#0">
+   <div class="form-container">
+      <h3>LOGIN</h3>
+      <!-- <label class="lastbox">
+                    <input type="text" id="lastname"  placeholder="Enter your name">
+                    <span class="lasttext"></span>
+                 </label> -->
+      <label class="emailbox">
+         <input type="email" id="email"   placeholder="Enter your Email">
+         <span class="emailtext"></span>
+         <p id="error"></p>
+      </label>
+      <label class="passbox">
+         <input type="password" id="password"  placeholder="Enter your password">
+         <span class="passtext"></span>
+         <p id="error1"></p>
+         <span class="text4"></span>
+      </label>
+      <div class="container">
+   <button type="submit" class="btn" onclick="validate()">SUBMIT</button>
+   <div class="popup" id="popup">
+   <img src="./check.jpeg">
+   <h2>Welcome Back!</h2>
+   <p>Logged in successfully</p>
+   <button type="button" onclick="closepopup()">OK</button>
+   </div>
+      </div>
+   </div>
+  
+  </form>
+  <footer class="footer">
+   <div id="copy">
+       <p style="color: blue;">&copy; 2023 My Website. All rights reserved.</p>
+       <p id="company_name">Prolaborate which provides the EA to big scale Organization</p>
+       <p id="company_name1">Explore our partner companies</p><a class="partners" href="sparx.net">sparx</a><a class="partners" href="6th_force_solutions">6t force solutions</a>
+   </div>
    
+</footer>
+   
+ <script>
+   //var satisfy=0;
+   const email = document.getElementById("email");
+const password = document.getElementById("password");
 
-    <p>@2023 Dream clothings website.All rights reserved.               Dreamclothings@gmail.com
-    Explore our partner companys
-       <a href="https://tmangharam.com/">Tmangharam</a>
-    </p>
+email.addEventListener('input',()=>{
+    const emailbox = document.querySelector('.emailbox');
+    const emailtext = document.querySelector('.emailtext');
+    const emailpattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
 
+    if(email.value.match(emailpattern)){
+        emailbox.classList.add('valid');
+        emailbox.classList.remove('invalid');
+        emailtext.innerHTML = "your email address is valid";
+       // satisfy=satisfy+1;
+        
+    }else{
+        emailbox.classList.add('invalid');
+        emailbox.classList.remove('valid');
+        emailtext.innerHTML = "please enter a valid email";
+    }
+});
+
+password.addEventListener('input',()=>{
+    const passbox = document.querySelector('.passbox');
+    const passtext = document.querySelector('.passtext');
+    const passpattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+
+    if(password.value.match(passpattern)){
+        passbox.classList.add('valid');
+        passbox.classList.remove('invalid');
+        passtext.innerHTML = "your password is valid";
+       // satisfy=satisfy+1;
+        
+    }else{
+        passbox.classList.add('invalid');
+        passbox.classList.remove('valid');
+        passtext.innerHTML = "Your password must be atleast 6 characters as well as contain at least one uppercase,one lowercase, and one number.";
+    }
+});
+
+//welcome message//
+let popup = document.getElementById("popup");
+function openpopup(){
+   popup.classList.add("open-popup");
+}
+function closepopup(){
+   popup.classList.remove("open-popup");
+}
+// //cannot blank validation//
+// function validate(event){
+//   event.preventDefault();
+//   //Validate each form input
+//   $("form input[data-required]").each(function(index){
+//     var $_this = $(this);
+//     var $_error = $_this.next(".error");
+//     if($_this.val().length == 0) {
+//       if($_error.length == 0){
+//          $_this.after('<p class="error">'+$_this.data("error-message")+'</p>');
+//       }
+//     } else
+//          $_error.remove();
+//   });
+// }
+
+
+// $("form").on({
+//   "submit": function(){
+//     validate(event);
+//   },
+//   "change": function(){
+//      validate(event);
+//   }
+// });
+// //login//
+// function setAction(form) {
+
+// if(satisfy>=3){
+// return openpopup();
+// }
+// else if(satisfy==1 || satisfy==2){
+//     satisy = 0;
+//     // validation();
+//     // validation2();
+//     text4.innerHTML="please fill correctly all credentials";
+//     text4.style.color="red"; 
     
-   </footer>
-   <script src="./script.js"></script>
-   <script>
-    $("#submit").click(function() {
-    $("#signin").slideUp(function() {
-      $(".form-container").hide();
-      $(".welcome-message").slideDown(function() {
-        $(".welcome-message").fadeTo(400, 1);
-      });
-    });
-  });
+// }
+// }
+function validate(){
+     if (email.value == 0 || email.value.length<8){
+        document.getElementById('error').innerHTML = 'please fill the required fields.';
+        return false;
+    }else if (password.value == 0 || password.value.length<8){
+        document.getElementById('error1').innerHTML = 'please fill the required password';
+        return false;
+    }
+    else{
+        return openpopup();
+    }
+}
+    
 
-   </script>
+
+
+
+
+ </script>
+   
 </body>
 </html>
